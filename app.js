@@ -17,10 +17,11 @@ document.title=`${name} — Portfólio`;document.querySelector('meta[property="o
 
 // The START screen's markup and stylesheet are copied byte-for-byte from v1.
 const intro=$('#intro'),startBtn=$('#startBtn'),skipBtn=$('#skipIntroBtn');
+const introControls=[...intro.querySelectorAll('button, a[href]')];
 document.body.classList.add('intro-open');
-function closeIntro(destination){if(intro.classList.contains('dismissed'))return;intro.classList.add('dismissed');intro.setAttribute('aria-hidden','true');document.body.classList.remove('intro-open');startBtn.setAttribute('tabindex','-1');skipBtn.setAttribute('tabindex','-1');if(destination)$(destination)?.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'instant'});$('#main')?.focus({preventScroll:true})}
-startBtn.addEventListener('click',()=>closeIntro());skipBtn.addEventListener('click',()=>closeIntro('#portfolio'));
-intro.addEventListener('keydown',ev=>{if(intro.classList.contains('dismissed'))return;if(ev.key==='Escape'){ev.preventDefault();closeIntro()}if(ev.key==='Tab'){if(ev.shiftKey&&document.activeElement===startBtn){ev.preventDefault();skipBtn.focus()}else if(!ev.shiftKey&&document.activeElement===skipBtn){ev.preventDefault();startBtn.focus()}}});
+function closeIntro(destination){if(intro.classList.contains('dismissed'))return;intro.classList.add('dismissed');intro.setAttribute('aria-hidden','true');document.body.classList.remove('intro-open');introControls.forEach(control=>control.setAttribute('tabindex','-1'));if(destination)$(destination)?.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'instant'});$('#main')?.focus({preventScroll:true})}
+skipBtn.addEventListener('click',()=>closeIntro());
+intro.addEventListener('keydown',ev=>{if(intro.classList.contains('dismissed'))return;if(ev.key==='Escape'){ev.preventDefault();closeIntro()}if(ev.key==='Tab'){const first=introControls[0],last=introControls[introControls.length-1];if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus()}else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus()}}});
 startBtn.focus({preventScroll:true});
 
 const nav=$('#mobileNav'),toggle=$('#menuToggle');const closeMenu=()=>{nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu')};

@@ -1,14 +1,14 @@
 /* EDITE AQUI. Todos os textos abaixo são DEMONSTRATIVOS, não são declarações sobre sua carreira. */
 window.PORTFOLIO_DATA = {
-  name: 'SEU NOME',
-  heroName: 'SEU NOME',
+  name: 'Daniel Santana',
+  heroName: 'Daniel Santana',
   roleLine1: 'Designer & Desenvolvedor',
   roleLine2: 'Criativo.',
   intro: 'Crio experiências digitais com atenção ao detalhe, da primeira ideia ao código.',
   aboutLead: 'Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.',
   about: 'Escreva aqui sua história: quem você é, sua trajetória e como gosta de trabalhar.',
   aboutExtra: 'Use este espaço para contar quais projetos gosta de criar e o que busca profissionalmente.',
-  email: '', // preencha seu email, ex.: voce@dominio.com
+  email: 'pykrow@gmail.com',
   github: '',
   linkedin: '',
   behance: '',

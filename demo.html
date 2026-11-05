@@ -28,6 +28,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { margin: 0; min-width: 320px; background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+html, body { scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body.intro-open { overflow: hidden; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; cursor: pointer; }
@@ -50,28 +52,28 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px s
 .intro-chrome, .intro-bottom { position: absolute; left: 5.5%; right: 5.5%; display: flex; align-items: center; justify-content: space-between; font: 800 11px var(--mono); letter-spacing: .14em; color: #8b95b0; z-index: 2; }
 .intro-chrome { top: 34px; }
 .intro-chrome span:first-child { display: flex; align-items: center; gap: 11px; }
-.intro-chrome b { color: var(--lime); font-weight: 800; }
-.intro-bottom { bottom: 34px; }
-.intro-hearts { color: var(--orange); letter-spacing: .37em; font-size: 16px; }
+.intro-bottom { bottom: 34px; justify-content: center; flex-direction: column; gap: 10px; text-align: center; }
+.intro-bottom a:hover { color: var(--lime); }
 .intro-center { position: relative; z-index: 3; width: min(94%, 1060px); text-align: center; transform: translateY(-2%); }
-.intro-eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--lime); }
+.intro-eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--lime); font-size: 13px; letter-spacing: .18em; }
 .blinking-dot { height: 7px; width: 7px; border-radius: 50%; background: var(--lime); animation: blink 1.5s step-end infinite; }
-.intro-brand { display: flex; flex-direction: column; align-items: center; font-family: var(--font); font-weight: 1000; font-size: clamp(96px, 16.6vw, 235px); letter-spacing: -.098em; line-height: .83; margin: 28px auto 32px; text-shadow: 9px 10px 0 #2d284e; }
+.intro-brand { display: flex; flex-direction: column; align-items: center; font-family: var(--font); font-weight: 1000; font-size: clamp(40px, 11.5vw, 64px); letter-spacing: -.098em; line-height: .83; margin: 28px auto 32px; text-shadow: 4px 5px 0 #ff1493; }
 .intro-brand > span { position: relative; padding-right: .12em; }
 .intro-brand > span:first-child { color: var(--ink); }
-.intro-brand > span:nth-child(2) { color: var(--lime); }
+.intro-brand > span:nth-child(2) { color: var(--ink); }
 .intro-asterisk { position: absolute; right: -.32em; top: -.22em; font-size: .43em; color: var(--orange); letter-spacing: 0; animation: spin 13s linear infinite; }
-.intro-rule { display: flex; align-items: center; justify-content: center; gap: 16px; font: 800 11px var(--mono); letter-spacing: .14em; color: #bdc4d1; }
+.intro-rule { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 28px; font: 800 11px var(--mono); letter-spacing: .14em; color: #bdc4d1; }
 .intro-rule span:nth-child(even) { color: var(--orange); font-size: 8px; }
 .intro-tagline { font: 800 14px var(--mono); letter-spacing: .16em; margin: 35px 0 24px; }
-.start-button { display: inline-flex; align-items: center; gap: 22px; padding: 22px 24px 22px 34px; border: 2px solid var(--lime); background: var(--lime); box-shadow: 8px 8px 0 #546e39; color: #10151b; font: 1000 16px var(--mono); letter-spacing: .025em; transition: transform .2s, box-shadow .2s; }
-.start-button:hover { transform: translate(4px,4px); box-shadow: 4px 4px 0 #546e39; }
-.play-triangle { font-size: 17px; }
+.start-button { display: inline-flex; align-items: center; justify-content: center; width: min(300px, calc(100% - 24px)); height: 56px; gap: 16px; padding: 0 28px; border: 2px solid var(--lime); background: var(--lime); box-shadow: 6px 6px 0 #546e39; color: #10151b; font: 900 24px/1 var(--mono); letter-spacing: .08em; transition: transform .2s, box-shadow .2s; }
+.start-button:hover { transform: translate(3px,3px); box-shadow: 3px 3px 0 #546e39; }
+.play-triangle { font-size: 20px; }
 .key-hint { border: 2px solid #566c3d; padding: 3px 7px; font-size: 14px; margin-left: 10px; }
-.quiet-link { display: block; margin: 24px auto 0; background: none; color: #a9b4cb; border: 0; font: 800 11px var(--mono); letter-spacing: .12em; padding: 10px; }
-.quiet-link:hover { color: var(--lime); }
+.resume-button { display: flex; align-items: center; justify-content: center; width: min(220px, calc(100% - 24px)); height: 42px; margin: 24px auto 0; gap: 12px; padding: 0 24px; border: 2px solid #777; background: rgba(10,10,10,.7); color: var(--ink); box-shadow: 3px 3px 0 #343434; font: 800 12px/1 var(--mono); letter-spacing: .12em; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.resume-button::before { content: ''; width: 4px; height: 4px; flex-shrink: 0; background: #e3bc4b; }
+.resume-button:hover { border-color: var(--ink); transform: translate(1px,1px); box-shadow: 2px 2px 0 #343434; }
+.resume-button:active { transform: translate(3px,3px); box-shadow: none; }
 .intro-planet { position: absolute; border-radius: 50%; pointer-events: none; }
-.planet-a { top: 15%; left: 9%; width: 82px; height: 82px; border: 12px solid #a18ae7; opacity: .4; box-shadow: 10px 10px 0 #28254b; }
 .planet-b { right: 8%; bottom: 16%; width: 32px; height: 32px; background: var(--orange); opacity: .7; box-shadow: 10px -10px 0 #a85b63; }
 .intro-stars { position: absolute; inset: 0; background-image: radial-gradient(circle, var(--lime) 1.5px, transparent 2px), radial-gradient(circle, var(--violet) 2px, transparent 3px); background-size: 217px 151px, 331px 281px; background-position: 15px 24px, 101px 41px; opacity: .34; animation: starDrift 22s linear infinite; }
 /* Header */
@@ -417,7 +419,6 @@ h1, h2, p { margin-top: 0; }
  .contact { min-height: 590px; }
  .footer { flex-wrap: wrap; padding-inline: 20px; }
  .footer > span { order: 3; width: 100%; text-align: center; }
- .intro-brand { font-size: clamp(89px,18vw,140px); }
  .intro-rule { font-size: 9px; gap: 9px; }
  .intro-bottom { font-size: 8px; }
 }
@@ -447,14 +448,12 @@ h1, h2, p { margin-top: 0; }
  .project-visual { height: 230px; }
  .project-info { padding: 23px; }
  .project-info h3 { font-size: 23px; }
- .intro-brand { font-size: clamp(72px,19vw,110px); }
  .intro-asterisk { right: -.25em; }
  .intro-rule { gap: 7px; font-size: 8px; letter-spacing: .02em; }
  .intro-tagline { font-size: 11px; }
  .intro-chrome,.intro-bottom { left: 19px; right: 19px; }
  .intro-chrome { font-size: 8px; }
  .intro-bottom { font-size: 7px; flex-wrap: wrap; gap: 6px; }
- .intro-hearts { font-size: 10px; }
  .contact h2 { font-size: clamp(42px,12vw,59px); }
  .contact-foot { font-size: 7px; }
  .contact-foot span:last-child { display: none; }
@@ -575,24 +574,17 @@ body:not(.intro-open) .noise,body:not(.intro-open) .scanlines{opacity:0}
   <!-- Tela de início: a navegação convencional continua disponível. -->
   <div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Iniciar portfólio">
     <div class="intro-grid" aria-hidden="true"></div>
-    <div class="intro-chrome">
-      <span><span class="tiny-square"></span> PLAYER ONE</span>
-      <span>PORTFOLIO.EXE <b>V 1.0</b></span>
-    </div>
     <div class="intro-center">
-      <span class="eyebrow intro-eyebrow"><span class="blinking-dot"></span> BEM-VINDO AO MEU UNIVERSO</span>
-      <div class="intro-brand"><span>PORT</span><span>FÓLIO<span class="intro-asterisk">✳</span></span></div>
-      <div class="intro-rule"><span>DESENVOLVIMENTO</span><span>●</span><span>CRIATIVIDADE</span><span>●</span><span>INTERAÇÃO</span></div>
-      <p class="intro-tagline">UMA NOVA FASE COMEÇA AQUI.</p>
-      <button id="startBtn" class="start-button" type="button"><span class="play-triangle">▶</span> APERTAR START <span class="key-hint">↵</span></button>
-      <button id="skipIntroBtn" class="quiet-link" type="button">OU EXPLORAR DIRETO <span aria-hidden="true">↗</span></button>
+      <span class="eyebrow intro-eyebrow">DESENVOLVEDOR</span>
+      <div class="intro-brand"><span>DANIEL</span><span>SANTANA</span></div>
+      <div class="intro-rule"><span>SOFTWARE DEV</span><span>●</span><span>WEB DEV</span><span>●</span><span>MOTION</span></div>
+      <button id="startBtn" class="start-button" type="button"><span class="play-triangle" aria-hidden="true">▶</span> START</button>
+      <button id="skipIntroBtn" class="resume-button" type="button">Curriculo</button>
     </div>
     <div class="intro-bottom">
-      <span>USE O MOUSE OU TECLADO</span>
-      <span class="intro-hearts" aria-label="Três vidas">♥ ♥ ♥</span>
-      <span>© <span class="year"></span> <span data-bind="name">SEU NOME</span></span>
+      <span>© <span class="year"></span> <span data-bind="name">Daniel Santana</span></span>
+      <a href="mailto:pykrow@gmail.com">pykrow@gmail.com</a>
     </div>
-    <div class="intro-planet planet-a" aria-hidden="true"></div>
     <div class="intro-planet planet-b" aria-hidden="true"></div>
     <div class="intro-stars" aria-hidden="true"></div>
   </div>
@@ -614,7 +606,7 @@ body:not(.intro-open) .noise,body:not(.intro-open) .scanlines{opacity:0}
       <div class="hero-inner site-container">
         <div class="hero-text">
           <span class="hero-greeting"><span class="greeting-line"></span> Oi, prazer. Eu sou</span>
-          <h1 class="hero-name" data-bind="heroName">SEU NOME<span>.</span></h1>
+          <h1 class="hero-name" data-bind="heroName">Daniel Santana<span>.</span></h1>
           <p class="hero-profession" id="heroRole">Designer &amp; Desenvolvedor<br><em>Criativo.</em></p>
           <div class="hero-foot">
             <p id="heroIntro">Crio experiências digitais com atenção ao detalhe, da primeira ideia ao código.</p>
@@ -656,19 +648,19 @@ body:not(.intro-open) .noise,body:not(.intro-open) .scanlines{opacity:0}
       <div class="site-container"><p class="small-label">04 / CONTATO</p><p class="contact-preface">Tem uma ideia em mente?</p><h2>Vamos criar<br><em>algo juntos.</em></h2><a href="#contact" id="contactAction" class="contact-action">Seu e-mail aqui <span>↗</span></a><div class="contact-bottom"><span>OBRIGADO PELA VISITA.</span><div id="socialLinks"></div></div></div>
     </section>
   </main>
-  <footer class="site-footer"><span>© <span class="year"></span> <span data-bind="name">SEU NOME</span></span><span>FEITO COM ATENÇÃO AOS DETALHES.</span><a href="#home">Voltar ao topo ↑</a></footer>
+  <footer class="site-footer"><span>© <span class="year"></span> <span data-bind="name">Daniel Santana</span></span><span>FEITO COM ATENÇÃO AOS DETALHES.</span><a href="#home">Voltar ao topo ↑</a></footer>
 <script>
 /* EDITE AQUI. Todos os textos abaixo são DEMONSTRATIVOS, não são declarações sobre sua carreira. */
 window.PORTFOLIO_DATA = {
-  name: 'SEU NOME',
-  heroName: 'SEU NOME',
+  name: 'Daniel Santana',
+  heroName: 'Daniel Santana',
   roleLine1: 'Designer & Desenvolvedor',
   roleLine2: 'Criativo.',
   intro: 'Crio experiências digitais com atenção ao detalhe, da primeira ideia ao código.',
   aboutLead: 'Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.',
   about: 'Escreva aqui sua história: quem você é, sua trajetória e como gosta de trabalhar.',
   aboutExtra: 'Use este espaço para contar quais projetos gosta de criar e o que busca profissionalmente.',
-  email: '', // preencha seu email, ex.: voce@dominio.com
+  email: 'pykrow@gmail.com',
   github: '',
   linkedin: '',
   behance: '',
@@ -705,10 +697,11 @@ document.title=`${name} — Portfólio`;document.querySelector('meta[property="o
 
 // The START screen's markup and stylesheet are copied byte-for-byte from v1.
 const intro=$('#intro'),startBtn=$('#startBtn'),skipBtn=$('#skipIntroBtn');
+const introControls=[...intro.querySelectorAll('button, a[href]')];
 document.body.classList.add('intro-open');
-function closeIntro(destination){if(intro.classList.contains('dismissed'))return;intro.classList.add('dismissed');intro.setAttribute('aria-hidden','true');document.body.classList.remove('intro-open');startBtn.setAttribute('tabindex','-1');skipBtn.setAttribute('tabindex','-1');if(destination)$(destination)?.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'instant'});$('#main')?.focus({preventScroll:true})}
-startBtn.addEventListener('click',()=>closeIntro());skipBtn.addEventListener('click',()=>closeIntro('#portfolio'));
-intro.addEventListener('keydown',ev=>{if(intro.classList.contains('dismissed'))return;if(ev.key==='Escape'){ev.preventDefault();closeIntro()}if(ev.key==='Tab'){if(ev.shiftKey&&document.activeElement===startBtn){ev.preventDefault();skipBtn.focus()}else if(!ev.shiftKey&&document.activeElement===skipBtn){ev.preventDefault();startBtn.focus()}}});
+function closeIntro(destination){if(intro.classList.contains('dismissed'))return;intro.classList.add('dismissed');intro.setAttribute('aria-hidden','true');document.body.classList.remove('intro-open');introControls.forEach(control=>control.setAttribute('tabindex','-1'));if(destination)$(destination)?.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'instant'});$('#main')?.focus({preventScroll:true})}
+skipBtn.addEventListener('click',()=>closeIntro());
+intro.addEventListener('keydown',ev=>{if(intro.classList.contains('dismissed'))return;if(ev.key==='Escape'){ev.preventDefault();closeIntro()}if(ev.key==='Tab'){const first=introControls[0],last=introControls[introControls.length-1];if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus()}else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus()}}});
 startBtn.focus({preventScroll:true});
 
 const nav=$('#mobileNav'),toggle=$('#menuToggle');const closeMenu=()=>{nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu')};
