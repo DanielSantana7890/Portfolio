@@ -2,9 +2,9 @@
 window.PORTFOLIO_DATA = {
   name: 'Daniel Santana',
   heroName: 'Daniel Santana',
-  roleLine1: 'Designer & Desenvolvedor',
-  roleLine2: 'Criativo.',
-  intro: 'Crio experiências digitais com atenção ao detalhe, da primeira ideia ao código.',
+  roleLine1: 'Software Developer & Full Stack Developer',
+  roleLine2: '',
+  intro: 'Desenvolvo sites e softwares e ajudo empresas a criar vídeos com inteligência artificial. Sou formado em Engenharia de Software, tenho curso técnico em Desenvolvimento de Sistemas e sigo aprimorando meu trabalho com a mentoria de Herbert, o Rei dos Sites.',
   aboutLead: 'Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.',
   about: 'Escreva aqui sua história: quem você é, sua trajetória e como gosta de trabalhar.',
   aboutExtra: 'Use este espaço para contar quais projetos gosta de criar e o que busca profissionalmente.',

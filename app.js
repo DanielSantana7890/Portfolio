@@ -9,9 +9,8 @@ const name=String(d.name||'SEU NOME');
 $$('[data-bind="name"]').forEach(el=>el.textContent=name);
 $$('.year').forEach(el=>el.textContent=new Date().getFullYear());
 txt('[data-bind="heroName"]',d.heroName||name);
-// Dot placed inside h1 is kept after changing text.
-const heroName=$('.hero-name');if(heroName){heroName.textContent=d.heroName||name;heroName.append(make('span','','.'))}
-const role=$('#heroRole');if(role){role.textContent=d.roleLine1||'Designer & Desenvolvedor';role.append(document.createElement('br'),make('em','',d.roleLine2||'Criativo.'))}
+const heroName=$('.hero-name');if(heroName)heroName.textContent=d.heroName||name;
+const role=$('#heroRole');if(role){role.textContent=d.roleLine1||'Software Developer & Full Stack Developer';if(d.roleLine2)role.append(document.createElement('br'),make('em','',d.roleLine2))}
 txt('#heroIntro',d.intro);txt('#aboutLead',d.aboutLead);txt('#aboutText',d.about);txt('#aboutExtra',d.aboutExtra);
 document.title=`${name} — Portfólio`;document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${name} — Portfólio`);
 
