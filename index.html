@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111110">
+  <meta name="description" content="Portfólio pessoal — trabalhos, processo e contato.">
+  <meta property="og:title" content="Portfólio pessoal">
+  <meta property="og:type" content="website">
+  <title>Portfólio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reference.css">
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Ir para o conteúdo</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <!-- Tela de início: a navegação convencional continua disponível. -->
+  <div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Iniciar portfólio">
+    <div class="intro-grid" aria-hidden="true"></div>
+    <div class="intro-chrome">
+      <span><span class="tiny-square"></span> PLAYER ONE</span>
+      <span>PORTFOLIO.EXE <b>V 1.0</b></span>
+    </div>
+    <div class="intro-center">
+      <span class="eyebrow intro-eyebrow"><span class="blinking-dot"></span> BEM-VINDO AO MEU UNIVERSO</span>
+      <div class="intro-brand"><span>PORT</span><span>FÓLIO<span class="intro-asterisk">✳</span></span></div>
+      <div class="intro-rule"><span>DESENVOLVIMENTO</span><span>●</span><span>CRIATIVIDADE</span><span>●</span><span>INTERAÇÃO</span></div>
+      <p class="intro-tagline">UMA NOVA FASE COMEÇA AQUI.</p>
+      <button id="startBtn" class="start-button" type="button"><span class="play-triangle">▶</span> APERTAR START <span class="key-hint">↵</span></button>
+      <button id="skipIntroBtn" class="quiet-link" type="button">OU EXPLORAR DIRETO <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="intro-bottom">
+      <span>USE O MOUSE OU TECLADO</span>
+      <span class="intro-hearts" aria-label="Três vidas">♥ ♥ ♥</span>
+      <span>© <span class="year"></span> <span data-bind="name">SEU NOME</span></span>
+    </div>
+    <div class="intro-planet planet-a" aria-hidden="true"></div>
+    <div class="intro-planet planet-b" aria-hidden="true"></div>
+    <div class="intro-stars" aria-hidden="true"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="site-wordmark" href="#home" aria-label="Ir para o início">PORTFOLIO<span class="wordmark-dot">.</span></a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#home">Início</a><a href="#portfolio">Portfólio</a><a href="#about">Sobre</a><a href="#services">Serviços</a><a href="#contact">Contato</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-contact" href="#contact">Vamos conversar <span aria-hidden="true">↗</span></a>
+      <button type="button" class="mobile-toggle" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav-v3" id="mobileNav" hidden aria-label="Menu no celular"><a href="#home">Início</a><a href="#portfolio">Portfólio</a><a href="#about">Sobre</a><a href="#services">Serviços</a><a href="#contact">Contato</a></nav>
+
+  <main id="main" class="site-main" tabindex="-1">
+    <section id="home" class="site-hero">
+      <div class="hero-inner site-container">
+        <div class="hero-text">
+          <span class="hero-greeting"><span class="greeting-line"></span> Oi, prazer. Eu sou</span>
+          <h1 class="hero-name" data-bind="heroName">SEU NOME<span>.</span></h1>
+          <p class="hero-profession" id="heroRole">Designer &amp; Desenvolvedor<br><em>Criativo.</em></p>
+          <div class="hero-foot">
+            <p id="heroIntro">Crio experiências digitais com atenção ao detalhe, da primeira ideia ao código.</p>
+            <a class="round-arrow" href="#portfolio" aria-label="Conhecer trabalhos">↘</a>
+          </div>
+        </div>
+        <div class="hero-photo-layout">
+          <div class="hero-photo"><img src="assets/portrait-close.png" alt="Retrato em preto e branco, com cabelo curto e roupa escura" width="1026" height="938" fetchpriority="high"></div>
+          <span class="photo-side-note">RETRATO / 01</span>
+        </div>
+      </div>
+      <div class="site-hero-bottom site-container"><span>PROJETOS & EXPERIÊNCIAS SELECIONADAS</span><a href="#portfolio">DESLIZE PARA CONHECER <span>↓</span></a></div>
+    </section>
+
+    <section id="portfolio" class="work-section">
+      <div class="site-container">
+        <div class="section-intro work-intro"><div><p class="small-label">01 / PORTFÓLIO</p><h2>Trabalhos <span>recentes</span><i>.</i></h2></div><p>Uma seleção de projetos, ideias e soluções. Cada trabalho tem uma história para contar.</p></div>
+        <div class="work-grid" id="projectGrid"></div>
+        <p class="portfolio-notice">As capas e os títulos dos projetos abaixo são espaços de demonstração para você inserir seus trabalhos reais.</p>
+      </div>
+    </section>
+
+    <section class="tech-band" aria-label="Ferramentas e habilidades"><div class="site-container"><span class="small-label">STACKS & FERRAMENTAS</span><div id="stackList" class="stack-list"></div></div></section>
+
+    <section id="about" class="about-section">
+      <div class="site-container about-grid">
+        <div class="about-words"><p class="small-label">02 / SOBRE</p><h2>Paixão,<br>criatividade<br><em>&amp; código.</em></h2><p class="about-lead" id="aboutLead">Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.</p><p id="aboutText">Este espaço será preenchido com sua história e trajetória profissional.</p><p id="aboutExtra">Você pode contar como começou, no que trabalha e o que deseja construir.</p><a class="text-link" href="#contact">Entre em contato <span>↗</span></a></div>
+        <figure class="about-photo"><img src="assets/portrait-full.png" alt="Retrato em preto e branco de pessoa com óculos, roupa preta e as mãos à frente" width="406" height="582" loading="lazy"><figcaption>POR TRÁS DOS PROJETOS — RETRATO / 02</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="services" class="services-section">
+      <div class="site-container"><div class="section-intro services-intro"><div><p class="small-label">03 / O QUE EU FAÇO</p><h2>Serviços<span>.</span></h2></div><p>Da primeira conversa até o último detalhe: um processo que une pensamento, design e execução.</p></div>
+        <div id="servicesList" class="services-list"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="site-container"><p class="small-label">04 / CONTATO</p><p class="contact-preface">Tem uma ideia em mente?</p><h2>Vamos criar<br><em>algo juntos.</em></h2><a href="#contact" id="contactAction" class="contact-action">Seu e-mail aqui <span>↗</span></a><div class="contact-bottom"><span>OBRIGADO PELA VISITA.</span><div id="socialLinks"></div></div></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>© <span class="year"></span> <span data-bind="name">SEU NOME</span></span><span>FEITO COM ATENÇÃO AOS DETALHES.</span><a href="#home">Voltar ao topo ↑</a></footer>
+</body>
+</html>
