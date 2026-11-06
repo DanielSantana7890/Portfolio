@@ -16,7 +16,7 @@ window.PORTFOLIO_DATA = {
   github: '',
   linkedin: '',
   behance: '',
-  stack: ['Design', 'UI / UX', 'HTML', 'CSS', 'JavaScript', 'React', 'Figma'],
+  stack: ['Design', 'UI / UX', 'JavaScript', 'React', 'Figma'],
   projects: [
     {title:'Projeto 01',category:'Seu trabalho em destaque',tags:['Categoria','Ano'],image:'',url:''},
     {title:'Projeto 02',category:'Seu trabalho em destaque',tags:['Categoria','Ano'],image:'',url:''},
