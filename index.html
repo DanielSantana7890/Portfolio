@@ -7,8 +7,8 @@
   <meta name="description" content="Portfólio pessoal — trabalhos, processo e contato.">
   <meta property="og:title" content="Portfólio pessoal">
   <meta property="og:type" content="website">
-  <title>Portfólio</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Daniel Santana</title>
+  <link rel="icon" type="image/x-icon" href="logo/Favicon.ico">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style_refe.css">
   <link rel="stylesheet" href="IridescentButton.css">
@@ -32,26 +32,25 @@
     </div>
     <div class="intro-bottom">
       <span>© <span class="year"></span> <span data-bind="name">Daniel Santana</span></span>
-      <a href="mailto:pykrow@gmail.com">pykrow@gmail.com</a>
+      <a href="index.html" onclick="event.preventDefault();window.location.reload();">pykrow@gmail.com</a>
     </div>
     <div class="intro-stars" aria-hidden="true"></div>
   </div>
 
   <header class="site-header">
-    <a class="site-wordmark" href="#top" aria-label="Ir para o início">Curriculo</a>
+    <a class="site-wordmark" href="#top" aria-label="Ir para o início" style="display:inline-flex;align-items:center;gap:10px;"><img src="logo/logo.png" alt="" width="44" height="44" style="display:block;width:44px;height:44px;object-fit:contain;flex-shrink:0;"><span>Curriculo</span></a>
     <nav class="site-nav" aria-label="Navegação principal">
       <a class="iridescent-button" href="#top"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg></span><span>Início</span></a>
-      <a class="iridescent-button" href="index.html"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18M10 12v3h4v-3"/></svg></span><span>Portfólio</span></a>
       <a class="iridescent-button" href="#about"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>Sobre</span></a>
       <a class="iridescent-button" href="#services"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5-7 7 7 7m8-14 7 7-7 7M14 3l-4 18"/></svg></span><span>Serviços</span></a>
       <a class="iridescent-button" href="#contact"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><span>Contato</span></a>
+      <a class="iridescent-button" href="index.html"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18M10 12v3h4v-3"/></svg></span><span>Portfólio</span></a>
     </nav>
     <div class="header-actions">
-      <a class="header-contact iridescent-button" href="#contact"><span class="iridescent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span><span>Vamos conversar</span></a>
       <button type="button" class="mobile-toggle" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
     </div>
   </header>
-  <nav class="mobile-nav-v3" id="mobileNav" hidden aria-label="Menu no celular"><a href="#top">Início</a><a href="index.html">Portfólio</a><a href="#about">Sobre</a><a href="#services">Serviços</a><a href="#contact">Contato</a></nav>
+  <nav class="mobile-nav-v3" id="mobileNav" hidden aria-label="Menu no celular"><a href="#top">Início</a><a href="#about">Sobre</a><a href="#services">Serviços</a><a href="#contact">Contato</a><a href="index.html">Portfólio</a></nav>
 
   <main id="main" class="site-main" tabindex="-1">
     <section id="home" class="site-hero">
@@ -72,7 +71,7 @@
 
     <section id="about" class="about-section">
       <div class="site-container about-grid">
-        <div class="about-words"><p class="small-label">02 / SOBRE</p><h2>Paixão,<br>criatividade<br><em>&amp; código.</em></h2><p class="about-lead" id="aboutLead">Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.</p><p id="aboutText">Este espaço será preenchido com sua história e trajetória profissional.</p><p id="aboutExtra">Você pode contar como começou, no que trabalha e o que deseja construir.</p><a class="text-link" href="#contact">Entre em contato <span>↗</span></a><div class="tech-band about-tech" aria-label="Ferramentas e habilidades"><span class="small-label">STACKS &amp; FERRAMENTAS</span><div id="stackList" class="stack-list"></div></div></div>
+        <div class="about-words"><p class="small-label">02 / SOBRE</p><h2>Paixão,<br>criatividade<br><em>&amp; código.</em></h2><p class="about-lead" id="aboutLead">Acredito em boas ideias, processo cuidadoso e projetos construídos para pessoas reais.</p><p id="aboutText">Este espaço será preenchido com sua história e trajetória profissional.</p><p id="aboutExtra">Você pode contar como começou, no que trabalha e o que deseja construir.</p><div class="tech-band about-tech" aria-label="Ferramentas e habilidades"><span class="small-label">STACKS &amp; FERRAMENTAS</span><div id="stackList" class="stack-list"></div></div></div>
         <figure class="about-photo"><div class="portrait-frame"><img src="assets/portrait-full.png" alt="Retrato em preto e branco de pessoa com óculos, roupa preta e as mãos à frente" width="406" height="582" loading="lazy"></div><figcaption>POR TRÁS DOS PROJETOS — RETRATO / 02</figcaption></figure>
       </div>
     </section>
@@ -98,9 +97,9 @@
     <section id="contact" class="contact-section">
       <div class="contact-ribbon" aria-hidden="true"></div>
       <script defer src="contact-ribbon.js"></script>
-      <div class="site-container"><p class="small-label">04 / CONTATO</p><p class="contact-preface">Tem uma ideia em mente?</p><h2>Vamos criar<br><em>algo juntos.</em></h2><a href="#contact" id="contactAction" class="contact-action">Seu e-mail aqui <span>↗</span></a><div class="contact-bottom"><span>OBRIGADO PELA VISITA.</span><div id="socialLinks"></div></div></div>
+      <div class="site-container"><p class="small-label">04 / CONTATO</p><p class="contact-preface">Tem uma ideia em mente?</p><h2>Vamos criar<br><em>algo juntos.</em></h2><div style="display:flex;align-items:center;gap:12px;font-size:23px;font-weight:600;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span id="contactAction">pykrow@gmail.com</span></div><a href="https://www.instagram.com/danielsantana.dev" target="_blank" rel="noopener noreferrer" style="margin-top:24px;width:fit-content;display:flex;align-items:center;gap:12px;text-decoration:none;font-size:23px;font-weight:600;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@danielsantana.dev</span></a><div class="contact-bottom"><span>OBRIGADO PELA VISITA.</span><div id="socialLinks"></div></div></div>
     </section>
   </main>
-  <footer class="site-footer"><span>© <span class="year"></span> <span data-bind="name">Daniel Santana</span>. Todos os direitos reservados.</span><a href="mailto:pykrow@gmail.com">pykrow@gmail.com</a></footer>
+  <footer class="site-footer"><span>© <span class="year"></span> <span data-bind="name">Daniel Santana</span>. Todos os direitos reservados.</span><a href="index.html" onclick="event.preventDefault();window.location.reload();">pykrow@gmail.com</a></footer>
 </body>
 </html>

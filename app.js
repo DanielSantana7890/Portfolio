@@ -21,13 +21,14 @@ if(aboutExtra&&Array.isArray(d.aboutParagraphs)){
     previous=paragraph;
   });
 }
-document.title=`${name} — Portfólio`;document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${name} — Portfólio`);
+document.title='Daniel Santana';document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${name} — Portfólio`);
 
 // The START screen's markup and stylesheet are copied byte-for-byte from v1.
 const intro=$('#intro'),startBtn=$('#startBtn'),skipBtn=$('#skipIntroBtn');
 const introControls=[...intro.querySelectorAll('button, a[href]')];
 document.body.classList.add('intro-open');
 function closeIntro(destination){if(intro.classList.contains('dismissed'))return;intro.classList.add('dismissed');intro.setAttribute('aria-hidden','true');document.body.classList.remove('intro-open');introControls.forEach(control=>control.setAttribute('tabindex','-1'));if(destination)$(destination)?.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'instant'});$('#main')?.focus({preventScroll:true})}
+startBtn.addEventListener('click',()=>{window.location.href='experiencia.html';});
 skipBtn.addEventListener('click',()=>closeIntro());
 intro.addEventListener('keydown',ev=>{if(intro.classList.contains('dismissed'))return;if(ev.key==='Escape'){ev.preventDefault();closeIntro()}if(ev.key==='Tab'){const first=introControls[0],last=introControls[introControls.length-1];if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus()}else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus()}}});
 startBtn.focus({preventScroll:true});
@@ -101,6 +102,6 @@ const competencies=$('#servicesList');
   card.append(number,text);competencies.append(card);
 });
 const email=typeof d.email==='string'&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)?d.email:'';
-const contact=$('#contactAction');if(email){contact.textContent=email;contact.append(make('span','','↗'));contact.href=`mailto:${email}`;}else{contact.classList.add('disabled');contact.removeAttribute('href');contact.textContent='Adicione seu e-mail em content.js';}
+txt('#contactAction',email||'Adicione seu e-mail em content.js');
 [['github','GitHub'],['linkedin','LinkedIn'],['behance','Behance']].forEach(([key,label])=>{const u=safeUrl(d[key]);if(!u)return;const a=make('a','',label+' ↗');a.href=u;a.target='_blank';a.rel='noopener noreferrer';$('#socialLinks').append(a)});
 })();

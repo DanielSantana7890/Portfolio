@@ -1,0 +1,37 @@
+.detail-top{justify-content:flex-end}
+.tape .cover{box-shadow:0 0 0 transparent;transition:box-shadow .4s ease}
+.tape.selected-glow .cover{box-shadow:0 0 45px 18px #b6cf922b,0 0 100px 45px #688b7026,0 0 150px 65px #b6cf9212}
+#stage.dragging .cover{box-shadow:none;transition:none}
+@media(prefers-reduced-motion:reduce){.tape .cover{transition:none}}
+#openActive.neon-dark-btn{position:relative;appearance:none;border:0;background:transparent;padding:0;border-radius:18px;cursor:pointer;isolation:isolate;font-family:Inter,system-ui,sans-serif;transition:transform .25s ease}
+.neon-dark-btn::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(135deg,#b6cf92cc,#688b7066,#b6cf92cc);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.65;transition:opacity .35s ease,filter .35s ease;filter:drop-shadow(0 0 10px #b6cf922e) drop-shadow(0 0 20px #688b7014);pointer-events:none}
+.neon-dark-btn::after{content:"";position:absolute;inset:0;border-radius:18px;background:radial-gradient(circle at 50% 50%,#b6cf922e,transparent 65%);filter:blur(18px);z-index:-2;opacity:.55;transition:opacity .35s ease,transform .35s ease;pointer-events:none}
+.neon-dark-btn .btn-bg{position:absolute;inset:0;border-radius:18px;background:linear-gradient(180deg,#ffffff08,#ffffff00 30%),linear-gradient(180deg,#1b201c,#111512);box-shadow:inset 0 1px 0 #ffffff0d,inset 0 -1px 0 #ffffff05,0 10px 30px #00000073,0 1px 0 #ffffff08;z-index:-1}
+.neon-dark-btn .btn-shine{position:absolute;inset:1px;border-radius:17px;overflow:hidden;pointer-events:none}
+.neon-dark-btn .btn-shine::before{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(90deg,transparent,#ffffff08,#ffffff1f,#ffffff08,transparent);transform:skewX(-20deg);transition:left .8s ease}
+.neon-dark-btn .btn-content{position:relative;display:inline-flex;align-items:center;gap:12px;min-width:220px;justify-content:center;padding:16px 24px;color:var(--blue);font-size:15px;font-weight:600;letter-spacing:.2px;border-radius:18px;backdrop-filter:blur(10px)}
+.neon-dark-btn .btn-dot{width:10px;height:10px;border-radius:999px;background:radial-gradient(circle at 30% 30%,#d8b4fe,#b6cf92 45%,#4c1d95);box-shadow:0 0 8px #b6cf92e6,0 0 18px #688b7059;animation:pulseDot 2.4s ease-in-out infinite;flex-shrink:0}
+.neon-dark-btn .btn-text{position:relative;isolation:isolate}
+.neon-dark-btn .btn-text::before{content:"";position:absolute;inset:2px -40px;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,#b6cf9280 0%,#688b7030 45%,transparent 75%);filter:blur(5px);pointer-events:none;animation:textGlow 2.4s ease-in-out infinite}
+@keyframes textGlow{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.neon-dark-btn .btn-text::before{animation:none!important}}
+.neon-dark-btn .btn-icon{font-size:16px;opacity:.88;transform:translateY(-1px);transition:transform .25s ease,opacity .25s ease}
+#openActive.neon-dark-btn:hover{transform:translateY(-2px)}
+.neon-dark-btn:hover::before{opacity:1;filter:drop-shadow(0 0 12px #b6cf9252) drop-shadow(0 0 24px #688b7024)}
+.neon-dark-btn:hover::after{opacity:.8;transform:scale(1.03)}
+.neon-dark-btn:hover .btn-shine::before{left:160%}
+.neon-dark-btn:hover .btn-icon{transform:translate(2px,-1px);opacity:1}
+#openActive.neon-dark-btn:active{transform:translateY(0) scale(.985)}
+#openActive.neon-dark-btn:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+@keyframes pulseDot{0%,100%{transform:scale(1);box-shadow:0 0 8px #b6cf92e6,0 0 18px #688b7059}50%{transform:scale(1.12);box-shadow:0 0 12px #b6cf92,0 0 24px #688b7080}}
+@media(prefers-reduced-motion:reduce){#openActive.neon-dark-btn,.neon-dark-btn *,.neon-dark-btn::before,.neon-dark-btn::after,.neon-dark-btn .btn-shine::before{transition:none!important;animation:none!important}}
+#detailImage{border-radius:20px;overflow:hidden}
+.intro{display:flex;align-items:center;gap:18px}
+.intro h1{position:relative;top:30px}
+.back-projects{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;pointer-events:auto;color:var(--blue);position:relative;top:-50px;left:-20px}
+.back-projects svg{display:block;width:38px;height:38px}
+.back-projects:hover{transform:translateX(-3px)}
+@media(prefers-reduced-motion:no-preference){.back-projects{transition:transform .2s ease}}
+/* Oculta as barras sem impedir rolagem por mouse, toque ou teclado. */
+html,body,#projectDialog{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar,#projectDialog::-webkit-scrollbar{display:none}
