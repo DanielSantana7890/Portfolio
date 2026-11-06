@@ -18,7 +18,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 0; }
 body { margin: 0; min-width: 320px; background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
 html, body { scrollbar-width: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
-body.intro-open { overflow: hidden; }
+html:has(body.intro-open) { overflow: hidden; overscroll-behavior: none; }
+body.intro-open { position: fixed; inset: 0; width: 100%; overflow: hidden; overscroll-behavior: none; }
+body.intro-open .intro { overflow: hidden; overscroll-behavior: none; touch-action: none; }
 /* Keep the résumé behind the opening screen, including mobile navigation. */
 body.intro-open .site-header,
 body.intro-open .mobile-nav-v3,
